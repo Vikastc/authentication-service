@@ -1,5 +1,4 @@
-import express from 'express';
-import { app, server } from './server';
+import { app } from './server';
 
 const port = 7001;
 
@@ -7,6 +6,10 @@ app.get('/test', (req, res) => {
     res.json({ result: 'success' });
 });
 
-server.listen(port, () => {
-    console.log(`listining on port ${port}`);
-});
+async function main() {
+    app.listen(port, () => {
+        console.log(`listining on port ${port}`);
+    });
+}
+
+main().catch((e) => console.log(e));

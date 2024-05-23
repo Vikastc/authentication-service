@@ -99,7 +99,7 @@ app.use(
 app.use('/templates', express.static('/app/dist/ui/templates'));
 
 const sessionStore: any = new FileStore({
-    path: '/sessions',
+    path: '../sessions',
     ttl: 7 * 24 * 60 * 60, // 7 days in seconds
     retries: 3,
 });
